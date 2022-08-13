@@ -1,11 +1,13 @@
-export class ProductModel {
+export class Product {
   id: number;
   code: string;
   name: string;
   price: number;
 
-  // code: string, name: string, price: string
-  constructor(props: Omit<ProductModel, "id">) {
-    Object.assign(this, props);
+  //
+  constructor(code: string, name: string, price: number) {
+    this.code = code;
+    this.name = name;
+    this.price = price;
   }
 }
