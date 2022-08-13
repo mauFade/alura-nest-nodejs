@@ -26,7 +26,7 @@ export class ProductsController {
 
   @Post()
   createOne(@Body() product): Product {
-    const newProduct = new Product(product.code, product.name, product.price);
+    const newProduct = new Product();
 
     return this.productService.createOne(newProduct);
   }

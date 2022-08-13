@@ -1,7 +1,6 @@
 import { Product } from "./product-model";
 import {
   Body,
-  Controller,
   Delete,
   Get,
   Injectable,
@@ -13,9 +12,9 @@ import {
 @Injectable()
 export class ProductServices {
   products: Product[] = [
-    new Product("LIV01", "Livro de Python", 29.9),
-    new Product("LIV02", "Livro de C++", 29.9),
-    new Product("LIV03", "Livro de JavaScript", 29.9),
+    // new Product("LIV01", "Livro de Python", 29.9),
+    // new Product("LIV02", "Livro de C++", 29.9),
+    // new Product("LIV03", "Livro de JavaScript", 29.9),
   ];
 
   @Get()
@@ -30,7 +29,7 @@ export class ProductServices {
 
   @Post()
   createOne(@Body() product): Product {
-    const newProduct = new Product(product.code, product.name, product.price);
+    const newProduct = new Product();
 
     this.products.push(newProduct);
 
