@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Put } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from "@nestjs/common";
 
 @Controller("products")
 export class ProductsController {
@@ -21,5 +29,10 @@ export class ProductsController {
   @Put(":id")
   updateOne(@Body() updatedProduct, @Param() params): string {
     return `Product updated successfully. ${updatedProduct.name}, ${updatedProduct.price}, ${params.id}`;
+  }
+
+  @Delete(":id")
+  deleteOne(@Param() params): string {
+    return `Produto apagado: ${params.id}`;
   }
 }
